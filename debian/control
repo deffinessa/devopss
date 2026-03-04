@@ -1,0 +1,13 @@
+Source: maxint
+Section: utils
+Priority: optional
+Maintainer: Angelina Bikbulatova
+Build-Depends: debhelper-compat (= 13), gcc, make
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: maxint
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Minimal CLI tool to return maximum integer
+ Finds the maximum value from integers passed as command-line arguments.
