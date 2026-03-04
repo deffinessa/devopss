@@ -44,11 +44,16 @@ jobs:
       - name: Package
         run: ./scripts/package.sh
 
+      - name: Collect deb
+        run: |
+          mkdir -p dist
+          cp ../*.deb dist/
+
       - name: Upload deb artifact
         uses: actions/upload-artifact@v4
         with:
           name: maxint-deb
-          path: ../*.deb
+          path: dist/*.deb
 
   release:
     if: startsWith(github.ref, 'refs/tags/v')
@@ -71,7 +76,12 @@ jobs:
       - name: Build package
         run: ./scripts/package.sh
 
+      - name: Collect deb
+        run: |
+          mkdir -p dist
+          cp ../*.deb dist/
+
       - name: Create release and upload deb
         uses: softprops/action-gh-release@v2
         with:
-          files: ../*.deb
+          files: dist/*.deb
