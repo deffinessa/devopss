@@ -1,0 +1,8 @@
+maxint
+*.o
+*.deb
+*.build
+*.buildinfo
+*.changes
+*.dsc
+*.tar.*
