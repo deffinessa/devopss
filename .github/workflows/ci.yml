@@ -68,8 +68,6 @@ jobs:
         with:
           name: maxint-deb
           path: .
-      - name: List files after checkout
-        run: ls -la
       - name: Build Docker image
         run: docker build -t maxint:ci .
       - name: Test Docker container
